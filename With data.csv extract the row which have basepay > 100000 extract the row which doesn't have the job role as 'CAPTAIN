@@ -1,0 +1,2 @@
+cat data.csv | awk '{print $4}'
+awk '$4 >100000' data.csv
