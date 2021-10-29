@@ -1,0 +1,15 @@
+for files in *.log
+do
+      foldername=`echo $files |awk -F. "{print $1}`
+      echo $folderName
+      if [ -d $foldername ]
+      then
+      rm -r $foldername
+      fi
+      mkdir $foldername
+      cp $file $foldername/$files
+      now=$(date + "%d%m%y")
+      nfile=$foldername-$now.log
+      (mv $foldername/$file $foldername/$nfile)
+done
+
